@@ -87,6 +87,6 @@ class {
   </div>
   <app-button
     label=(state.users.length ? "Load more users" : "Load users")
-    onClick("handleLoadMoreClick")/>
+    onClick("handleLoadMoreClick", document.getElementById('text1').text)/>
   <span class=[state.loading ? "loading" : null]/>
 </div>

@@ -1,4 +1,5 @@
 {
-  "body": "static-text",
-  "preserve-whitespace": true
+  "attributes": {
+    "body": "string"
+  }
 }

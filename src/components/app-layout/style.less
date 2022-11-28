@@ -1,5 +1,31 @@
 .container {
-  margin-left: auto;
-  margin-right: auto;
-  width: 800px;
+  // margin-left: auto;
+  // margin-right: auto;
+  // display: grid;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(243, 222, 196);
+}
+
+.container .cHeader {
+  position: absolute;
+  height: 60px;
+  width: 100%;
+  top: 0px;
+  text-align: center;
+}
+
+.container .cBody {
+  position: absolute;
+  height: calc(100% - 90px);
+  width: 100%;
+  top: 60px;
+}
+
+.container .cFooter {
+  position: absolute;
+  height: 30px;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
 }

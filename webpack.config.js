@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MarkoPlugin = require("@marko/webpack/plugin").default;
 const CSSExtractPlugin = require("mini-css-extract-plugin");
 const SpawnServerPlugin = require("spawn-server-webpack-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const { NODE_ENV } = process.env;
 const isProd = NODE_ENV === "production";
@@ -26,9 +26,14 @@ module.exports = [
       path: path.join(__dirname, "dist/client")
     },
     devServer: isDev ? {
-      overlay: true,
-      stats: "minimal",
-      contentBase: false,
+      static : {
+      },
+      client: {
+        overlay: true,
+      },
+      devMiddleware : {
+        stats: "minimal"
+      },
       ...spawnedServer.devServerConfig
     }: undefined,
     plugins: [
@@ -38,7 +43,7 @@ module.exports = [
       new CSSExtractPlugin({
         filename: "[name].[contenthash:8].css"
       }),
-      isProd && new OptimizeCssAssetsPlugin(),
+      isProd && new CssMinimizerPlugin(),
       markoPlugin.browser
     ]
   }),
@@ -100,11 +105,7 @@ function compiler(config) {
         },
         {
           test: /\.(jpg|jpeg|gif|png)$/,
-          loader: "file-loader",
-          options: {
-            // File assets from server & browser compiler output to client folder.
-            outputPath: "../client"
-          }
+          type: 'asset/resource'
         }
       ]
     },

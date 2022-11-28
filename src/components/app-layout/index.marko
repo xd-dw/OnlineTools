@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"/> -->
     <meta charset="UTF-8"/>
     <title>
       <${data.title}/>
@@ -9,11 +10,16 @@
     <${data.styles}/>
   </head>
   <body>
-    <sample-header title="Marko UI Components Playground"/>
     <div class="container">
-      <main id="main">
+      <div class="cHeader">
+        <sample-header title="Online Tools - Json"/>
+      </div>
+      <div class="cBody">
         <${data.body}/>
-      </main>
+      </div>
+      <div class="cFooter">
+        <sample-footer/>
+      </div>
     </div>
     <!-- <script> tags to include optimized JS URLs will be included below: -->
     <${data.scripts}/>
