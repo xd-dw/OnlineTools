@@ -1,8 +1,8 @@
 {
-  "name": "WebpackDemo",
+  "name": "OnlineTools",
   "description": "Sample app that demonstrates the power of building UI components using Marko and Webpack",
   "version": "1.0.0",
-  "author": "Patrick Steele-idem <pnidem@gmail.com>",
+  "author": "xd",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marko-js/examples.git"
